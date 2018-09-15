@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require("express");
+process.env.NODE_ENV = ""
 const db = require("./models");
 const app = express();
 const PORT = process.env.PORT || 8080;
