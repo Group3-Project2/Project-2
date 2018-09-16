@@ -123,7 +123,6 @@
 
 
 $(".navClass").click(function() {
-    console.log($(this).data())
     const arg = $(this).data('relay')
     $.get(arg, ()=>window.location.href = arg);
 });
