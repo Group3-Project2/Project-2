@@ -121,15 +121,9 @@
 
 })(jQuery);
 
-const relay = {
-    "home": "/",
-    "schedule lessons": "/about",
-    "blog": "/blog",
-    "contact": "/contact"
-}
+
 $(".navClass").click(function() {
-    const arg = $(this).html().toLowerCase()
-    if (relay[arg]) {
-        $.get(relay[arg], ()=>window.location.href = relay[arg]);
-    }
+    console.log($(this).data())
+    const arg = $(this).data('relay')
+    $.get(arg, ()=>window.location.href = arg);
 });
