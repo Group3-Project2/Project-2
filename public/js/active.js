@@ -126,3 +126,8 @@ $(".navClass").click(function() {
     const arg = $(this).data('relay')
     $.get(arg, ()=>window.location.href = arg);
 });
+
+$("#login").click(function() {
+   const modalHtml =  $.get('/api/loginModal');
+   console.log(modalHtml);
+})

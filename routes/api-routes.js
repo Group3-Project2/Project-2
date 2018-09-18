@@ -7,7 +7,8 @@ module.exports = function(app, db) {
             schedules: JSON.stringify({}),
             passhash: null // This is where some kind of encrypted password or maybe even link to google password something or other would need to go.
         })
-    }).then(data=>{
-        //Do something here, redirect?
-    });
+    })
+    app.get("/api/loginModal", (req, res) => {
+        res.send("<div>Test</div>");
+    })
 };
