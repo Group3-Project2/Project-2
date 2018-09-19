@@ -17,12 +17,18 @@ module.exports = function(app, db) {
         res.sendFile(path.join(__dirname, "../public/contact.html"));
     });
 
-    app.get("/:username", async (req, res) => {
-        const userData = await db.UserAccount.findOne({
-            where: {
-                username: req.params.username
-            }
-        });
+    app.get("/accounts/:username", async (req, res) => {
+        let userData;
+        try {
+            userData = await db.UserAccount.findOne({
+                where: {
+                    username: req.params.username
+                }
+            });
+        }
+        catch (err) {
+            throw new Error(err);
+        };
         // Do something with userData here, like present the account landing page with the dynamic user data
     });
 

@@ -127,7 +127,7 @@ $(".navClass").click(function() {
     $.get(arg, ()=>window.location.href = arg);
 });
 
-$("#login").click(function() {
-   const modalHtml =  $.get('/api/loginModal');
-   console.log(modalHtml);
+$("#login").click(async () => {
+   const modalHtml = await $.get('/api/loginModal');
+   $(modalHtml).modal('show');
 })

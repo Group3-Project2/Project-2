@@ -9,6 +9,7 @@ module.exports = function(app, db) {
         })
     })
     app.get("/api/loginModal", (req, res) => {
-        res.send("<div>Test</div>");
+        let htmlText = require('fs').readFileSync(require('path').join(__dirname, '../public/loginModal.html'));
+        res.send(htmlText);
     })
 };
