@@ -12,4 +12,8 @@ module.exports = function(app, db) {
         let htmlText = require('fs').readFileSync(require('path').join(__dirname, '../public/loginModal.html'));
         res.send(htmlText);
     })
+
+    app.get("env") (req, res) => {
+        res.send(process.env.NODE_ENV);
+    }
 };
