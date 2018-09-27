@@ -2,21 +2,21 @@ module.exports = function (sequelize, DataTypes) {
     const Post = sequelize.define("Post", {
         name: {
             type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [1]
-            }
+            allowNull: false,
+            // validate: {
+            //     len: [1]
+            // }
         },
         email: {
             type: DataTypes.STRING,
-            allowNull: true,
-            validate: {
-                len: [1]
-            }
+            allowNull: false,
+            // validate: {
+            //     len: [1]
+            // }
         },
         number: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            allowNull: false,
 
             // validate: {
             //     len: [1]
@@ -24,11 +24,11 @@ module.exports = function (sequelize, DataTypes) {
         },
         message: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
 
-            validate: {
-                len: [1]
-            }
+            // validate: {
+            //     len: [1]
+            // }
         },
     });
 
@@ -37,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
     //     // A Post can't be created without an Author due to the foreign key constraint
     //     Post.belongsTo(models.Author, {
     //         foreignKey: {
-    //             allowNull: false
+    //             allowNull: true
     //         }
     //     });
     // };

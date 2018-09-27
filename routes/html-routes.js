@@ -16,11 +16,11 @@ module.exports = function (app) {
     app.get("/contact", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/contact.html"));
     });
-    // app.post("/api/posts", function (req, res) {
-    //     db.Post.create(req.body).then(function (dbPost) {
-    //         res.json(dbPost);
-    //     });
-    // });
+    app.post("/api/posts", function (req, res) {
+        db.Post.create(req.body).then(function (dbPost) {
+            res.json(dbPost);
+        });
+    });
 
     // app.post('/data', function (req, res) {
 
